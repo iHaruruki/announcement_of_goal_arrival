@@ -23,8 +23,8 @@ private:
       // STATUS_SUCCEEDED = 4
       if (s.status == action_msgs::msg::GoalStatus::STATUS_SUCCEEDED) {
         // 合成音声を発生
-        std::system("spd-say '到着しました'");
-        RCLCPP_INFO(this->get_logger(), "到着しました を再生");
+        std::system("spd-say 'Reached the goal'");
+        RCLCPP_INFO(this->get_logger(), "Play Reached the goal sound");
         // 一回だけ流せばよいなら break
         break;
       }
