@@ -11,6 +11,17 @@ find_package(rclcpp REQUIRED)
 find_package(action_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
 
+add_executable(arrived_speech_node src/arrived_speech_node.cpp)
+ament_target_dependencies(arrived_speech_node
+  rclcpp
+  action_msgs
+)
+
+install(TARGETS
+  arrived_speech_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
