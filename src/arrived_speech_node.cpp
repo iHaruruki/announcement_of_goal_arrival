@@ -13,7 +13,7 @@ public:
     sub_ = this->create_subscription<GoalStatusArray>(
       "/navigate_to_pose/_action/status", 10,
       std::bind(&ArrivedSpeech::status_callback, this, std::placeholders::_1));
-    RCLCPP_INFO(this->get_logger(), "ArrivedSpeech ノードを起動しました");
+    RCLCPP_INFO(this->get_logger(), "arrived_speech_node started");
   }
 
 private:
