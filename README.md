@@ -18,6 +18,28 @@ $ source install/setup.bash
 ```
 $ ros2 run announcement_of_goal_arrival arrived_speech_node
 ```
+### For debugging
+* status: 4 indicates STATUS_SUCCEEDED
+* --once → Send only once
+* -r 1: Continues issuing at 1 Hz, useful for continuous testing of arrival detection nodes
+```
+ros2 topic pub \
+  /navigate_to_pose/_action/status \
+  action_msgs/msg/GoalStatusArray \
+  "{status_list:
+    [
+      {
+        goal_info:
+          {
+            stamp:    {sec: 0, nanosec: 0},
+            goal_id:  {uuid: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]}
+          },
+        status: 4
+      }
+    ]
+  }" \
+  --once
+```
 ## License
 ## Authors
 
