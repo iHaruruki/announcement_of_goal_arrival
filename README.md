@@ -19,7 +19,7 @@ $ source install/setup.bash
 $ ros2 run announcement_of_goal_arrival arrived_speech_node
 ```
 ### For debugging
-* status: 4 indicates STATUS_SUCCEEDED
+* status: 4 indicates `STATUS_SUCCEEDED`
 * --once: Send only once
 If you change --once to -r 1, the sound will continue.
 * -r 1: Continually issues messages at 1 Hz, useful for continuous testing of arrival detection nodes.
